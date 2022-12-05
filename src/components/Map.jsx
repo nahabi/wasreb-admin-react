@@ -1,0 +1,173 @@
+import { useState } from 'react'
+import layersIcon from '../assets/icons/layers.svg'
+import {
+  Button,
+  Modal,
+  Label,
+  TextInput,
+  Select,
+  FileInput,
+  Textarea
+} from 'flowbite-react'
+
+const LayerSelector = ({ label, value }) => (
+  <div className="p-4 hover:bg-slate-800 transition-all ease-in-out">
+    <div className="flex items-center">
+      <input
+        type="checkbox"
+        id={value}
+        value={value}
+        className="w-4 h-4 mr-2 text-slate-600 bg-gray-100 rounded border-gray-300 focus:ring-slate-500 dark:focus:ring-slate-600 focus:ring-2"
+      />
+      <label
+        htmlFor={value}
+        className="ml-2 text-sm font-medium text-slate-200"
+      >
+        {label}
+      </label>
+    </div>
+  </div>
+)
+
+const Map = () => {
+  const [modalVisible, setModalVisible] = useState(false)
+  const [layersVisible, setLayersVisible] = useState(false)
+  const visibilityClass = layersVisible ? 'visible' : 'hidden'
+
+  return (
+    <div className="relative">
+      <h1 className="text-7xl text-slate-200 text-center mt-6">
+        Map goes here
+      </h1>
+      <aside
+        className="w-64 bg-slate-900/90 text-white rounded-r shadow-lg mt-6 overflow-hidden absolute top-2 left-0 fixed z-40"
+        aria-label="Sidebar"
+      >
+        <div
+          className="py-2 px-4 uppercase font-bold bg-slate-800 border-b border-slate-700 flex justify-between cursor-pointer"
+          onClick={() => setLayersVisible(!layersVisible)}
+        >
+          <div className="flex justify-start">
+            <img src={layersIcon} className="w-4 h-4 mr-4 mt-1" />
+            Layers
+          </div>
+          <div>
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div id="layer-items" className={visibilityClass}>
+          <LayerSelector value="appertunances" label="Appertunances" />
+          <LayerSelector value="national-boundary" label="National boundary" />
+          <LayerSelector value="county-boundaries" label="County boundaries" />
+          <LayerSelector value="lsa" label="Licensed Service Areas" />
+          <LayerSelector value="lia" label="Low Income Areas" />
+          <LayerSelector value="sewers" label="Sewers/manholes" />
+          <LayerSelector value="sssp" label="SSSP Schemes" />
+          <LayerSelector value="water-pipelines" label="Water pipelines" />
+          <LayerSelector
+            value="wwdas"
+            label="Water works & Development Agencies"
+          />
+        </div>
+      </aside>
+      <div className="absolute bottom-0 right-2 w-12 h-12 bg-slate-800 hover:bg-slate-700 border-2 border-slate-500 rounded-full flex flex-col justify-center shadow-md">
+        <Button
+          className="bg-transparent hover:bg-transparent w-6 h-6 mx-auto ring-0 focus:ring-0"
+          onClick={() => setModalVisible(true)}
+        >
+          <svg
+            className="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+            ></path>
+          </svg>
+        </Button>
+      </div>
+
+      <Modal
+        show={modalVisible}
+        position="bottom-right"
+        onClose={() => setModalVisible(false)}
+      >
+        <Modal.Header className="bg-slate-800">
+          <span className="text-slate-300">Edit map</span>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="p-2">
+            <div className="mb-4">
+              <div className="block uppercase font-bold">
+                <Label htmlFor="value1" value="Value 1" />
+              </div>
+              <TextInput id="value1" placeholder="Value 1" required={true} />
+            </div>
+            <div id="textarea" className="mb-4">
+              <div className="block uppercase font-bold">
+                <Label htmlFor="notes" value="Notes" />
+              </div>
+              <Textarea
+                id="notes"
+                placeholder="Some notes..."
+                required={true}
+                rows={4}
+              />
+            </div>
+            <div id="select" className="mb-4">
+              <div className="block uppercase font-bold">
+                <Label htmlFor="options" value="Select your option" />
+              </div>
+              <Select id="options" required={true}>
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+              </Select>
+            </div>
+            <div id="fileUpload">
+              <div className="block uppercase font-bold">
+                <Label htmlFor="file" value="Upload file" />
+              </div>
+              <FileInput id="file" helperText="Short descriptor to help user" />
+            </div>
+          </div>
+        </Modal.Body>
+        <Modal.Footer className="bg-slate-700">
+          <Button
+            onClick={() => setModalVisible(false)}
+            className="bg-slate-300 hover:bg-slate-200 text-slate-800 rounded-md"
+          >
+            Submit
+          </Button>
+          <Button
+            onClick={() => setModalVisible(false)}
+            className="bg-slate-500 hover:bg-slate-400 text-slate-800 rounded-md"
+          >
+            Cancel
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </div>
+  )
+}
+
+export default Map

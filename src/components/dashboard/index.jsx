@@ -5,7 +5,7 @@ import pipeline from '../../assets/icons/pipeline.svg'
 import { Badge, Checkbox, Progress, Table } from 'flowbite-react'
 
 const Dashboard = () => (
-  <>
+  <div className="container mx-auto py-12">
     <h1 className="dashboard-heading">Dashboard</h1>
     <div className="md:grid md:grid-cols-2 lg:grid-cols-4 gap-12 mt-6">
       <StatsCard
@@ -305,7 +305,7 @@ const Dashboard = () => (
         </p>
       </div>
     </div>
-  </>
+  </div>
 )
 
 export default Dashboard
