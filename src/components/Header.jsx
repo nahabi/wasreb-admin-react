@@ -43,7 +43,11 @@ const ProvidersIcon = () => (
   </div>
 )
 const Header = () => (
-  <Navbar rounded={false} className="bg-slate-800 text-slate-100">
+  <Navbar
+    rounded={false}
+    className="bg-slate-800 text-slate-100"
+    style={{ backgroundColor: 'rgb(30, 41, 59)' }}
+  >
     <Navbar.Brand href="https://admin.majidata.go.ke/">
       <img src={logo} className="sm:h-6" alt="Majidata" />
     </Navbar.Brand>
@@ -73,7 +77,11 @@ const Header = () => (
       <Navbar.Toggle />
     </div>
     <Navbar.Collapse>
-      <Navbar.Link href="/" className="text-slate-100 flex justify-start">
+      <Navbar.Link
+        href="/"
+        className="text-slate-100 flex justify-start"
+        style={{ color: 'white' }}
+      >
         <svg
           className="w-4 h-4 mr-2"
           fill="none"
@@ -90,7 +98,11 @@ const Header = () => (
         </svg>
         Dashboard
       </Navbar.Link>
-      <Navbar.Link href="/" className="text-slate-100 flex justify-start">
+      <Navbar.Link
+        href="/"
+        className="text-slate-100 flex justify-start"
+        style={{ color: 'white' }}
+      >
         <svg
           className="w-4 h-4 mr-2"
           fill="none"
@@ -116,7 +128,11 @@ const Header = () => (
         <Dropdown.Item>WSPs</Dropdown.Item>
         <Dropdown.Item>SSSPs</Dropdown.Item>
       </Dropdown>
-      <Navbar.Link href="/" className="text-slate-100 flex justify-start">
+      <Navbar.Link
+        href="/"
+        className="text-slate-100 flex justify-start"
+        style={{ color: 'white' }}
+      >
         <svg
           className="w-4 h-4 mr-2"
           fill="none"
