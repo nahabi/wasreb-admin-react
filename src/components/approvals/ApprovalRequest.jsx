@@ -1,7 +1,7 @@
 import ApprovalsListNavigation from './ApprovalsListNavigation.jsx'
 import { Avatar, Accordion, Button } from 'flowbite-react'
 
-const ApprovalRequest = () => (
+const ApprovalRequest = ({ setApprovalModalVisible }) => (
   <div className="basis-10/12 rounded-md bg-white ml-6 overflow-hidden">
     <ApprovalsListNavigation />
     <div className="flex justify-start m-6">
@@ -22,7 +22,7 @@ const ApprovalRequest = () => (
           <Accordion.Title>
             This is the title of the request for approval
           </Accordion.Title>
-          <Accordion.Content>
+          <Accordion.Content className="bg-white">
             <p className="mb-2 text-gray-500 text-sm">
               Donec hendrerit elit eu leo laoreet, quis tristique ante sagittis.
               Phasellus egestas auctor dolor quis pharetra. Nam euismod accumsan
@@ -40,7 +40,7 @@ const ApprovalRequest = () => (
         </Accordion.Panel>
         <Accordion.Panel>
           <Accordion.Title>Previous version of the map</Accordion.Title>
-          <Accordion.Content>
+          <Accordion.Content className="bg-white">
             <p className="mb-2 text-gray-500 text-sm">
               Place the unchanged version of the map here
             </p>
@@ -48,7 +48,7 @@ const ApprovalRequest = () => (
         </Accordion.Panel>
         <Accordion.Panel>
           <Accordion.Title>New version of the map</Accordion.Title>
-          <Accordion.Content>
+          <Accordion.Content className="bg-white">
             <p className="mb-2 text-gray-500 text-sm">
               Place the new version of the map here
             </p>
@@ -75,7 +75,7 @@ const ApprovalRequest = () => (
           </svg>
           Approve
         </Button>
-        <Button color="info">
+        <Button color="info" onClick={() => setApprovalModalVisible(true)}>
           <svg
             className="w-4 h-4 mr-4"
             fill="none"
@@ -90,7 +90,7 @@ const ApprovalRequest = () => (
               d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
             ></path>
           </svg>
-          Request modification
+          Ask for modification
         </Button>
         <Button color="failure">
           <svg
