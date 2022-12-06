@@ -37,7 +37,7 @@ const Map = () => {
   const visibilityClass = layersVisible ? 'visible' : 'hidden'
 
   return (
-    <div className="relative">
+    <div className="relative flex-grow">
       <h1 className="text-7xl text-slate-200 text-center mt-6">
         Map goes here
       </h1>
@@ -85,7 +85,7 @@ const Map = () => {
           />
         </div>
       </aside>
-      <div className="absolute bottom-0 right-2 w-12 h-12 bg-slate-800 hover:bg-slate-700 border-2 border-slate-500 rounded-full flex flex-col justify-center shadow-md">
+      <div className="absolute bottom-2 right-2 w-12 h-12 bg-slate-800 hover:bg-slate-700 border-2 border-slate-500 rounded-full flex flex-col justify-center shadow-md">
         <Button
           className="bg-transparent hover:bg-transparent w-6 h-6 mx-auto ring-0 focus:ring-0"
           style={{ backgroundColor: 'transparent' }}
@@ -158,12 +158,14 @@ const Map = () => {
           <Button
             onClick={() => setModalVisible(false)}
             className="bg-slate-300 hover:bg-slate-200 text-slate-800 rounded-md"
+            style={{ backgroundColor: '#cbd5e1', color: '#1e293b' }}
           >
             Submit
           </Button>
           <Button
             onClick={() => setModalVisible(false)}
             className="bg-slate-500 hover:bg-slate-400 text-slate-800 rounded-md"
+            style={{ backgroundColor: '#64748b', color: '#1e293b' }}
           >
             Cancel
           </Button>
