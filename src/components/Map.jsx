@@ -85,7 +85,7 @@ const Map = () => {
           />
         </div>
       </aside>
-      <div className="absolute bottom-2 right-2 w-12 h-12 bg-slate-800 hover:bg-slate-700 border-2 border-slate-500 rounded-full flex flex-col justify-center shadow-md">
+      <div className="absolute bottom-2 right-2 w-12 h-12 bg-slate-800 hover:bg-slate-700 border-2 border-slate-500 rounded-full flex flex-col justify-center shadow-md z-40">
         <Button
           className="bg-transparent hover:bg-transparent w-6 h-6 mx-auto ring-0 focus:ring-0"
           style={{ backgroundColor: 'transparent' }}
