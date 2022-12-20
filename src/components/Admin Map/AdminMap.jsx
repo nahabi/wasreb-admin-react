@@ -18,9 +18,12 @@ import LayerGroup from "ol/layer/Group";
 import LayerSwitcher from 'ol-layerswitcher';
 import { format } from "ol/coordinate";
 
+import { Button, Space } from 'antd';
+
 import "ol/ol.css";
 import 'ol-layerswitcher/dist/ol-layerswitcher.css';
 import './AdminMap.css'
+import SelectComponent from './SelectComponent';
 
 
 const AdminMap = () => {
@@ -212,7 +215,15 @@ const AdminMap = () => {
 
 
     return (
-        <div ref={mapElement} className="map-container"></div>
+        <div ref={mapElement} className="map-container">
+            <Space size="middle" style={{position: 'absolute', zIndex: 100, top: '20px', left: '50%', transform: 'translate(-50%, 0)'}}>
+                <SelectComponent />
+                <Button type="info" style={{backgroundColor: '#1788f1', color: 'white'}}>Select</Button>
+                <Button type="primary" style={{backgroundColor: '#28a745', color: 'white'}}>Create</Button>
+                <Button type="primary" style={{backgroundColor: '#eca52b', color: 'white'}}>Edit</Button>
+                <Button type="danger" style={{backgroundColor: '#f1494b', color: 'white'}}>Delete</Button>
+            </Space>
+        </div>
     )
 }
 
