@@ -9,11 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "antd": "^5.0.7",
     "flowbite": "^1.5.4",
     "flowbite-react": "^0.3.6",
+    "ol": "^7.1.0",
+    "ol-layerswitcher": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.5.0"
+    "react-router-dom": "^6.5.0",
+    "stream": "0.0.2",
+    "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
