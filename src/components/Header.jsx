@@ -99,7 +99,7 @@ const Header = () => (
         Dashboard
       </Navbar.Link>
       <Navbar.Link
-        href="/"
+        href="/map"
         className="text-slate-100 flex justify-start"
         style={{ color: 'white' }}
       >
