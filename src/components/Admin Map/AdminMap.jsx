@@ -17,6 +17,11 @@ import OverviewMap from 'ol/control/OverviewMap'
 import LayerGroup from "ol/layer/Group";
 import LayerSwitcher from 'ol-layerswitcher';
 import { format } from "ol/coordinate";
+import VectorSource from 'ol/source/Vector';
+import GeoJSON from 'ol/format/GeoJSON.js';
+import {Vector as VectorLayer} from 'ol/layer.js';
+import {bbox as bboxStrategy} from 'ol/loadingstrategy.js';
+
 
 import { Button, Space } from 'antd';
 
@@ -29,6 +34,7 @@ import SelectComponent from './SelectComponent';
 const AdminMap = () => {
     const [ map, setMap ] = useState(null)
     const [ availableLayers, setAvailableLayers ] = useState()
+    const [ editingLayer, setEditingLayer ] = useState()
 
     // get ref to div element - OpenLayers will render into this div
     const mapElement = useRef()
@@ -39,6 +45,14 @@ const AdminMap = () => {
 
     //Mouse position coordinates format
     var coordFormat = "Lon {x}, Lat {y}";
+
+    // soptions for the selct component
+    const options = [
+        {
+            value: 'WASREB:low_income_area_edit',
+            label: 'WASREB:low_income_area_edit',
+        },
+    ]
 
     // map layer groups
     let basemaps = new LayerGroup({
@@ -167,7 +181,7 @@ const AdminMap = () => {
     // get the accessible layers
     useEffect(() => {
         let layersList = []
-        let url = "http://102.37.157.16:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities&namespace=KIAWASCO&authkey=bad69a50-fb45-4a47-9079-ac540c58893c"
+        let url = "http://102.37.157.16:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities&namespace=WASREB&authkey=bad69a50-fb45-4a47-9079-ac540c58893c"
         fetch(url)
             .then((response) => response.text())
             .then((data) => {
@@ -213,11 +227,47 @@ const AdminMap = () => {
         }
     }, [availableLayers])
 
+    const loadWFSLayer = () => {
+        const vectorSource = new VectorSource({
+            format: new GeoJSON(),
+            url: function (extent) {
+                return (
+                    `http://102.37.157.16:8080/geoserver/ows?service=WFS&` +
+                    `version=1.0.0&request=GetFeature&typeName=WASREB%3Alow_income_area_edit&` +
+                    `outputFormat=application%2Fjson&srsname=EPSG:3857&` + 
+                    `bbox=` +
+                    extent.join(',') +
+                    ',EPSG:4326'
+                )
+            },
+            strategy: bboxStrategy
+        })
+
+        const wfsLayer = new VectorLayer({
+            source: vectorSource,
+            style: {
+              'stroke-width': 0.75,
+              'stroke-color': 'red',
+              'fill-color': 'rgba(100,100,100,0.25)',
+            },
+        });
+
+        mapRef.current.addLayer(wfsLayer)
+    }
+
+    // load the WFS layer when user selects the layer to edit
+    useEffect(() => {
+        if (editingLayer) {
+            console.group('loading wfs')
+            loadWFSLayer()
+        }
+    }, [editingLayer])
+
 
     return (
         <div ref={mapElement} className="map-container">
             <Space size="middle" style={{position: 'absolute', zIndex: 100, top: '20px', left: '50%', transform: 'translate(-50%, 0)'}}>
-                <SelectComponent />
+                <SelectComponent options={options} setEditingLayer={setEditingLayer} />
                 <Button type="info" style={{backgroundColor: '#1788f1', color: 'white'}}>Select</Button>
                 <Button type="primary" style={{backgroundColor: '#28a745', color: 'white'}}>Create</Button>
                 <Button type="primary" style={{backgroundColor: '#eca52b', color: 'white'}}>Edit</Button>
