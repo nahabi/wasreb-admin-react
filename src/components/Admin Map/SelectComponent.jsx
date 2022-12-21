@@ -1,10 +1,11 @@
 import React from 'react'
 import { Select } from 'antd';
 
-const SelectComponent = ({options}) => {
+const SelectComponent = ({options, setEditingLayer}) => {
 
     const onChange = (value) => {
         console.log(`selected ${value}`);
+        setEditingLayer(value)
     };
 
     const onSearch = (value) => {
