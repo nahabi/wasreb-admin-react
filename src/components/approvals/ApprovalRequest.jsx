@@ -16,14 +16,14 @@ const ApprovalRequest = ({ setApprovalModalVisible }) => (
       </div>
     </div>
 
-    <div className="border-y border-gray-200 bg-gray-50">
+    <div className="border-y border-wsblue-200 bg-wsblue-50">
       <Accordion flush={true}>
         <Accordion.Panel>
           <Accordion.Title>
             This is the title of the request for approval
           </Accordion.Title>
           <Accordion.Content className="bg-white">
-            <p className="mb-2 text-gray-500 text-sm">
+            <p className="mb-2 text-wsblue-500 text-sm">
               Donec hendrerit elit eu leo laoreet, quis tristique ante sagittis.
               Phasellus egestas auctor dolor quis pharetra. Nam euismod accumsan
               dolor, sagittis luctus felis molestie vitae. Nunc ultricies lacus
@@ -41,7 +41,7 @@ const ApprovalRequest = ({ setApprovalModalVisible }) => (
         <Accordion.Panel>
           <Accordion.Title>Previous version of the map</Accordion.Title>
           <Accordion.Content className="bg-white">
-            <p className="mb-2 text-gray-500 text-sm">
+            <p className="mb-2 text-wsblue-500 text-sm">
               Place the unchanged version of the map here
             </p>
           </Accordion.Content>
@@ -49,7 +49,7 @@ const ApprovalRequest = ({ setApprovalModalVisible }) => (
         <Accordion.Panel>
           <Accordion.Title>New version of the map</Accordion.Title>
           <Accordion.Content className="bg-white">
-            <p className="mb-2 text-gray-500 text-sm">
+            <p className="mb-2 text-wsblue-500 text-sm">
               Place the new version of the map here
             </p>
           </Accordion.Content>

@@ -16,7 +16,7 @@ const StatsCard = ({ label, stat, trendStat, trend, icon }) => {
           <p className="text-sm font-bold uppercase mb-1">{label}</p>
           <p className="text-4xl text-slate-400 font-light">{stat}</p>
         </div>
-        <div className="h-12 w-12 rounded-full bg-gray-200 flex flex-col justify-center items-center">
+        <div className="h-12 w-12 rounded-full bg-wsblue-200 flex flex-col justify-center items-center">
           <img src={icon} alt="WSPs" className="h-6 w-6" />
         </div>
       </div>

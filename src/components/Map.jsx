@@ -11,17 +11,17 @@ import {
 } from 'flowbite-react'
 
 const LayerSelector = ({ label, value }) => (
-  <div className="p-4 hover:bg-slate-800 transition-all ease-in-out">
+  <div className="p-4 hover:bg-wsblue-800 transition-all ease-in-out">
     <div className="flex items-center">
       <input
         type="checkbox"
         id={value}
         value={value}
-        className="w-4 h-4 mr-2 text-slate-600 bg-gray-100 rounded border-gray-300 focus:ring-slate-500 dark:focus:ring-slate-600 focus:ring-2"
+        className="w-4 h-4 mr-2 text-wsblue-600 bg-gray-100 rounded border-gray-300 focus:ring-wsblue-500 dark:focus:ring-wsblue-600 focus:ring-2"
       />
       <label
         htmlFor={value}
-        className="ml-2 text-sm font-medium text-slate-200"
+        className="ml-2 text-sm font-medium text-wsblue-200"
       >
         {label}
       </label>
@@ -38,15 +38,15 @@ const Map = () => {
 
   return (
     <div className="relative flex-grow">
-      <h1 className="text-7xl text-slate-200 text-center mt-6">
+      <h1 className="text-7xl text-wsblue-200 text-center mt-6">
         Map goes here
       </h1>
       <aside
-        className="w-64 bg-slate-900/90 text-white rounded-r shadow-lg mt-6 overflow-hidden absolute top-2 left-0 fixed z-40"
+        className="w-64 bg-wsblue-900/90 text-white rounded-r shadow-lg mt-6 overflow-hidden absolute top-2 left-0 fixed z-40"
         aria-label="Sidebar"
       >
         <div
-          className="py-2 px-4 uppercase font-bold bg-slate-800 border-b border-slate-700 flex justify-between cursor-pointer"
+          className="py-2 px-4 uppercase font-bold bg-wsblue-800 border-b border-wsblue-700 flex justify-between cursor-pointer"
           onClick={() => setLayersVisible(!layersVisible)}
         >
           <div className="flex justify-start">
@@ -85,7 +85,7 @@ const Map = () => {
           />
         </div>
       </aside>
-      <div className="absolute bottom-2 right-2 w-12 h-12 bg-slate-800 hover:bg-slate-700 border-2 border-slate-500 rounded-full flex flex-col justify-center shadow-md z-40">
+      <div className="absolute bottom-2 right-2 w-12 h-12 bg-wsblue-800 hover:bg-wsblue-700 border-2 border-wsblue-500 rounded-full flex flex-col justify-center shadow-md z-40">
         <Button
           className="bg-transparent hover:bg-transparent w-6 h-6 mx-auto ring-0 focus:ring-0"
           style={{ backgroundColor: 'transparent' }}
@@ -113,8 +113,8 @@ const Map = () => {
         position="bottom-right"
         onClose={() => setModalVisible(false)}
       >
-        <Modal.Header className="bg-slate-800">
-          <span className="text-slate-300">Edit map</span>
+        <Modal.Header className="bg-wsblue-800">
+          <span className="text-wsblue-300">Edit map</span>
         </Modal.Header>
         <Modal.Body>
           <div className="p-2">
@@ -154,17 +154,17 @@ const Map = () => {
             </div>
           </div>
         </Modal.Body>
-        <Modal.Footer className="bg-slate-700">
+        <Modal.Footer className="bg-wsblue-700">
           <Button
             onClick={() => setModalVisible(false)}
-            className="bg-slate-300 hover:bg-slate-200 text-slate-800 rounded-md"
+            className="bg-wsblue-300 hover:bg-wsblue-200 text-wsblue-800 rounded-md"
             style={{ backgroundColor: '#cbd5e1', color: '#1e293b' }}
           >
             Submit
           </Button>
           <Button
             onClick={() => setModalVisible(false)}
-            className="bg-slate-500 hover:bg-slate-400 text-slate-800 rounded-md"
+            className="bg-wsblue-500 hover:bg-wsblue-400 text-wsblue-800 rounded-md"
             style={{ backgroundColor: '#64748b', color: '#1e293b' }}
           >
             Cancel

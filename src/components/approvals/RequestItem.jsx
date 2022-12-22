@@ -14,13 +14,13 @@ const RequestItem = ({
       ? '#c084fc'
       : '#34d399'
   return (
-    <tr className="bg-white border-b hover:bg-gray-100">
+    <tr className="bg-white border-b hover:bg-wsblue-100">
       <td className="p-4 w-4">
         <div className="flex items-center">
           <input
             id={checkValue}
             type="checkbox"
-            className="w-4 h-4 text-gray-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
+            className="w-4 h-4 text-wsblue-600 bg-wsblue-100 rounded border-wsblue-300 focus:ring-blue-500 focus:ring-2"
           />
           <label htmlFor={checkValue} className="sr-only">
             checkbox
@@ -45,7 +45,7 @@ const RequestItem = ({
       </td>
       <th
         scope="row"
-        className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap"
+        className="py-4 px-6 font-medium text-wsblue-900 whitespace-nowrap"
       >
         {requestedBy}
       </th>

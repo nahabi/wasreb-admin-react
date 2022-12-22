@@ -57,13 +57,13 @@ const Dashboard = () => (
             <Table.HeadCell>Status</Table.HeadCell>
           </Table.Head>
           <Table.Body className="divide-y">
-            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+            <Table.Row className="bg-white dark:border-wsblue-700 dark:bg-wsblue-800">
               <Table.Cell className="!p-4">
                 <Checkbox />
               </Table.Cell>
-              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+              <Table.Cell className="whitespace-nowrap font-medium text-wsblue-900 dark:text-white">
                 This is an example of a request
-                <span className="font-normal text-xs italic block mt-1 text-gray-500">
+                <span className="font-normal text-xs italic block mt-1 text-wsblue-500">
                   20 November 2022
                 </span>
               </Table.Cell>
@@ -76,13 +76,13 @@ const Dashboard = () => (
                 </Badge>
               </Table.Cell>
             </Table.Row>
-            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+            <Table.Row className="bg-white dark:border-wsblue-700 dark:bg-wsblue-800">
               <Table.Cell className="!p-4">
                 <Checkbox />
               </Table.Cell>
-              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+              <Table.Cell className="whitespace-nowrap font-medium text-wsblue-900 dark:text-white">
                 This is another example of a request
-                <span className="font-normal text-xs italic block mt-1 text-gray-500">
+                <span className="font-normal text-xs italic block mt-1 text-wsblue-500">
                   18 November 2022
                 </span>
               </Table.Cell>
@@ -95,13 +95,13 @@ const Dashboard = () => (
                 </Badge>
               </Table.Cell>
             </Table.Row>
-            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+            <Table.Row className="bg-white dark:border-wsblue-700 dark:bg-wsblue-800">
               <Table.Cell className="!p-4">
                 <Checkbox />
               </Table.Cell>
-              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+              <Table.Cell className="whitespace-nowrap font-medium text-wsblue-900 dark:text-white">
                 This is yet another example of a request
-                <span className="font-normal text-xs italic block mt-1 text-gray-500">
+                <span className="font-normal text-xs italic block mt-1 text-wsblue-500">
                   16 November 2022
                 </span>
               </Table.Cell>
@@ -114,13 +114,13 @@ const Dashboard = () => (
                 </Badge>
               </Table.Cell>
             </Table.Row>
-            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+            <Table.Row className="bg-white dark:border-wsblue-700 dark:bg-wsblue-800">
               <Table.Cell className="!p-4">
                 <Checkbox />
               </Table.Cell>
-              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+              <Table.Cell className="whitespace-nowrap font-medium text-wsblue-900 dark:text-white">
                 This is yet another example of a request
-                <span className="font-normal text-xs italic block mt-1 text-gray-500">
+                <span className="font-normal text-xs italic block mt-1 text-wsblue-500">
                   16 November 2022
                 </span>
               </Table.Cell>
@@ -136,7 +136,7 @@ const Dashboard = () => (
           </Table.Body>
         </Table>
       </div>
-      <div className="basis-2/10 bg-white rounded shadow-lg border border-gray-200 p-6">
+      <div className="basis-2/10 bg-white rounded shadow-lg border border-wsblue-200 p-6">
         <div className="mb-8 text-sm uppercase">
           <Progress
             color="blue"
@@ -165,7 +165,7 @@ const Dashboard = () => (
           />
         </div>
 
-        <p className="mx-auto flex flex-col justify-center font-bold text-white text-2xl text-gray-400 font-light text-center mt-12 w-12 h-12 rounded-full bg-slate-600 border-2 border-slate-400">
+        <p className="mx-auto flex flex-col justify-center font-bold text-white text-2xl text-wsblue-400 font-light text-center mt-12 w-12 h-12 rounded-full bg-slate-600 border-2 border-slate-400">
           <span>23</span>
         </p>
         <p className="text-sm uppercase text-center font-bold mt-4">
@@ -189,13 +189,13 @@ const Dashboard = () => (
             <Table.HeadCell>Status</Table.HeadCell>
           </Table.Head>
           <Table.Body className="divide-y">
-            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+            <Table.Row className="bg-white dark:border-wsblue-700 dark:bg-wsblue-800">
               <Table.Cell className="!p-4">
                 <Checkbox />
               </Table.Cell>
-              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+              <Table.Cell className="whitespace-nowrap font-medium text-wsblue-900 dark:text-white">
                 This is an example of a request
-                <span className="font-normal text-xs italic block mt-1 text-gray-500">
+                <span className="font-normal text-xs italic block mt-1 text-wsblue-500">
                   20 November 2022
                 </span>
               </Table.Cell>
@@ -208,13 +208,13 @@ const Dashboard = () => (
                 </Badge>
               </Table.Cell>
             </Table.Row>
-            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+            <Table.Row className="bg-white dark:border-wsblue-700 dark:bg-wsblue-800">
               <Table.Cell className="!p-4">
                 <Checkbox />
               </Table.Cell>
-              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+              <Table.Cell className="whitespace-nowrap font-medium text-wsblue-900 dark:text-white">
                 This is another example of a request
-                <span className="font-normal text-xs italic block mt-1 text-gray-500">
+                <span className="font-normal text-xs italic block mt-1 text-wsblue-500">
                   18 November 2022
                 </span>
               </Table.Cell>
@@ -227,13 +227,13 @@ const Dashboard = () => (
                 </Badge>
               </Table.Cell>
             </Table.Row>
-            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+            <Table.Row className="bg-white dark:border-wsblue-700 dark:bg-wsblue-800">
               <Table.Cell className="!p-4">
                 <Checkbox />
               </Table.Cell>
-              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+              <Table.Cell className="whitespace-nowrap font-medium text-wsblue-900 dark:text-white">
                 This is yet another example of a request
-                <span className="font-normal text-xs italic block mt-1 text-gray-500">
+                <span className="font-normal text-xs italic block mt-1 text-wsblue-500">
                   16 November 2022
                 </span>
               </Table.Cell>
@@ -246,13 +246,13 @@ const Dashboard = () => (
                 </Badge>
               </Table.Cell>
             </Table.Row>
-            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+            <Table.Row className="bg-white dark:border-wsblue-700 dark:bg-wsblue-800">
               <Table.Cell className="!p-4">
                 <Checkbox />
               </Table.Cell>
-              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+              <Table.Cell className="whitespace-nowrap font-medium text-wsblue-900 dark:text-white">
                 This is yet another example of a request
-                <span className="font-normal text-xs italic block mt-1 text-gray-500">
+                <span className="font-normal text-xs italic block mt-1 text-wsblue-500">
                   16 November 2022
                 </span>
               </Table.Cell>
@@ -268,7 +268,7 @@ const Dashboard = () => (
           </Table.Body>
         </Table>
       </div>
-      <div className="basis-2/10 bg-white rounded shadow-lg border border-gray-200 p-6">
+      <div className="basis-2/10 bg-white rounded shadow-lg border border-wsblue-200 p-6">
         <div className="mb-8 text-sm uppercase">
           <Progress
             color="blue"
@@ -297,7 +297,7 @@ const Dashboard = () => (
           />
         </div>
 
-        <p className="mx-auto flex flex-col justify-center font-bold text-white text-2xl text-gray-400 font-light text-center mt-12 w-12 h-12 rounded-full bg-slate-600 border-2 border-slate-400">
+        <p className="mx-auto flex flex-col justify-center font-bold text-white text-2xl text-wsblue-400 font-light text-center mt-12 w-12 h-12 rounded-full bg-slate-600 border-2 border-slate-400">
           <span>87</span>
         </p>
         <p className="text-sm uppercase text-center font-bold mt-4">

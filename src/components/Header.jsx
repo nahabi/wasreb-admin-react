@@ -1,4 +1,4 @@
-import logo from '../assets/img/majidata-logo.svg'
+import logo from '../assets/img/majidata-logo-white.png'
 // import userIcon from '../assets/icons/user.svg'
 import { Navbar, Dropdown, Avatar } from 'flowbite-react'
 import { startTransition } from 'react'
@@ -45,7 +45,7 @@ const ProvidersIcon = () => (
 const Header = () => (
   <Navbar
     rounded={false}
-    className="bg-slate-800 text-slate-100"
+    className="bg-wsblue-800 text-wsblue-100"
     style={{ backgroundColor: 'rgb(30, 41, 59)' }}
   >
     <Navbar.Brand href="https://admin.majidata.go.ke/">
@@ -79,7 +79,7 @@ const Header = () => (
     <Navbar.Collapse>
       <Navbar.Link
         href="/"
-        className="text-slate-100 flex justify-start"
+        className="text-wsblue-100 flex justify-start"
         style={{ color: 'white' }}
       >
         <svg
@@ -100,7 +100,7 @@ const Header = () => (
       </Navbar.Link>
       <Navbar.Link
         href="/"
-        className="text-slate-100 flex justify-start"
+        className="text-wsblue-100 flex justify-start"
         style={{ color: 'white' }}
       >
         <svg
@@ -123,14 +123,14 @@ const Header = () => (
         label={<ProvidersIcon />}
         arrowIcon={true}
         inline={true}
-        className="text-slate-100"
+        className="text-wsblue-100"
       >
         <Dropdown.Item>WSPs</Dropdown.Item>
         <Dropdown.Item>SSSPs</Dropdown.Item>
       </Dropdown>
       <Navbar.Link
         href="/"
-        className="text-slate-100 flex justify-start"
+        className="text-wsblue-100 flex justify-start"
         style={{ color: 'white' }}
       >
         <svg
@@ -153,7 +153,7 @@ const Header = () => (
         label={<UserIcon />}
         arrowIcon={true}
         inline={true}
-        className="text-slate-100 hover:text-slate-200"
+        className="text-wsblue-100 hover:text-wsblue-200"
       >
         <Dropdown.Item>Administrators</Dropdown.Item>
         <Dropdown.Item>Wasreb Users</Dropdown.Item>

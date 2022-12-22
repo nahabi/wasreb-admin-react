@@ -4,7 +4,7 @@ import ApprovalsListNavigation from './ApprovalsListNavigation.jsx'
 const ApprovalsList = () => (
   <div className="basis-10/12 rounded-md bg-white ml-6 overflow-hidden">
     <ApprovalsListNavigation />
-    <table className="w-full text-sm text-left text-gray-500">
+    <table className="w-full text-sm text-left text-wsblue-500">
       <tbody>
         <RequestItem
           checkValue="mercy-request"

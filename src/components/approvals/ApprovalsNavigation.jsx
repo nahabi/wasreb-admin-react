@@ -3,7 +3,7 @@ import TagSelector from './TagSelector.jsx'
 
 const ApprovalsNavigation = () => (
   <div className="basis-2/12 rounded-md bg-white overflow-hidden">
-    <p className="bg-slate-200 px-4 py-2 font-bold flex justify-start">
+    <p className="bg-wsblue-200 px-4 py-2 font-bold flex justify-start">
       <svg
         className="w-5 h-5 mr-2"
         fill="none"
@@ -21,7 +21,7 @@ const ApprovalsNavigation = () => (
       Incoming
     </p>
 
-    <div className="px-4 py-4 border-b border-slate-200">
+    <div className="px-4 py-4 border-b border-wsblue-200">
       <div className="flex items-center gap-3 mb-4">
         <Checkbox id="wsps" />
         <Label htmlFor="wsps">WSPs</Label>
@@ -42,7 +42,7 @@ const ApprovalsNavigation = () => (
         <Label htmlFor="field">Field data</Label>
       </div>
     </div>
-    <div className="px-4 py-4 border-b border-slate-200">
+    <div className="px-4 py-4 border-b border-wsblue-200">
       <TagSelector stage={1} />
       <TagSelector stage={2} />
       <TagSelector stage={3} />
