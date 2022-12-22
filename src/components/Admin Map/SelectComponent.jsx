@@ -4,7 +4,6 @@ import { Select } from 'antd';
 const SelectComponent = ({options, setEditingLayer}) => {
 
     const onChange = (value) => {
-        console.log(`selected ${value}`);
         setEditingLayer(value)
     };
 

@@ -29,12 +29,14 @@ import "ol/ol.css";
 import 'ol-layerswitcher/dist/ol-layerswitcher.css';
 import './AdminMap.css'
 import SelectComponent from './SelectComponent';
+import { fetchLayerProperties } from './utils';
 
 
 const AdminMap = () => {
     const [ map, setMap ] = useState(null)
     const [ availableLayers, setAvailableLayers ] = useState()
     const [ editingLayer, setEditingLayer ] = useState()
+    const [ editingLayerProperties, setEditingLayerProperties ] = useState([])
 
     // get ref to div element - OpenLayers will render into this div
     const mapElement = useRef()
@@ -246,7 +248,7 @@ const AdminMap = () => {
         const wfsLayer = new VectorLayer({
             source: vectorSource,
             style: {
-              'stroke-width': 0.75,
+              'stroke-width': 1,
               'stroke-color': 'red',
               'fill-color': 'rgba(100,100,100,0.25)',
             },
@@ -257,11 +259,21 @@ const AdminMap = () => {
 
     // load the WFS layer when user selects the layer to edit
     useEffect(() => {
+        const fetchAttributes = async () => {
+            const layerAttributes = await fetchLayerProperties(editingLayer)
+
+            setEditingLayerProperties(layerAttributes)
+        }
+
         if (editingLayer) {
-            console.group('loading wfs')
             loadWFSLayer()
+            fetchAttributes()
         }
     }, [editingLayer])
+
+    useEffect(() => {
+        console.log(editingLayerProperties)
+    })
 
 
     return (
