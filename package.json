@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.8.0",
     "antd": "^5.0.7",
     "flowbite": "^1.5.4",
     "flowbite-react": "^0.3.6",

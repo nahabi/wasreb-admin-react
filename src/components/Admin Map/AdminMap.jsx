@@ -23,7 +23,8 @@ import {Vector as VectorLayer} from 'ol/layer.js';
 import {bbox as bboxStrategy} from 'ol/loadingstrategy.js';
 
 
-import { Button, Space } from 'antd';
+import { Button, Space, Tooltip } from 'antd';
+import { EditOutlined, FormOutlined, DeleteOutlined, SelectOutlined} from '@ant-design/icons'
 
 import "ol/ol.css";
 import 'ol-layerswitcher/dist/ol-layerswitcher.css';
@@ -280,10 +281,18 @@ const AdminMap = () => {
         <div ref={mapElement} className="map-container">
             <Space size="middle" style={{position: 'absolute', zIndex: 100, top: '20px', left: '50%', transform: 'translate(-50%, 0)'}}>
                 <SelectComponent options={options} setEditingLayer={setEditingLayer} />
-                <Button type="info" style={{backgroundColor: '#1788f1', color: 'white'}}>Select</Button>
-                <Button type="primary" style={{backgroundColor: '#28a745', color: 'white'}}>Create</Button>
-                <Button type="primary" style={{backgroundColor: '#eca52b', color: 'white'}}>Edit</Button>
-                <Button type="danger" style={{backgroundColor: '#f1494b', color: 'white'}}>Delete</Button>
+                <Tooltip placement="topLeft" title="Select Feature">
+                    <SelectOutlined style={{ color: 'black', fontSize: 20}}/>
+                </Tooltip>
+                <Tooltip placement="topLeft" title="Create Feature">
+                    <EditOutlined style={{ color: 'black', fontSize: 20}}/>
+                </Tooltip>
+                <Tooltip placement="topLeft" title="Edit Feature">
+                    <FormOutlined style={{ color: 'black', fontSize: 20}}/>
+                </Tooltip>
+                <Tooltip placement="topLeft" title="Delete Feature">
+                    <DeleteOutlined style={{ color: 'red', fontSize: 20}}/>
+                </Tooltip>
             </Space>
         </div>
     )
