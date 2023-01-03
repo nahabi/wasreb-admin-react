@@ -8,7 +8,7 @@ export const fetchLayerProperties = async (layerName) => {
     const data = await res.text()
     const json = xml2json(data);
     const obj = JSON.parse(json)
-    const properties = obj.elements[0].elements[1].elements[0].elements[0].elements[0].elements
+    const properties = obj.elements[0]?.elements[1]?.elements[0]?.elements[0]?.elements[0]?.elements
     properties.forEach((property) => {
         layerProperties.push(property.attributes)
     })
