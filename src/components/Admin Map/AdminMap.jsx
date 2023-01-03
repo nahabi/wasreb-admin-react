@@ -52,8 +52,8 @@ const AdminMap = () => {
     // soptions for the selct component
     const options = [
         {
-            value: 'WASREB:low_income_area_edit',
-            label: 'WASREB:low_income_area_edit',
+            value: 'PUBLIC_PORTAL:actual_served_area_14122022',
+            label: 'PUBLIC_PORTAL:actual_served_area_14122022',
         },
     ]
 
@@ -95,10 +95,10 @@ const AdminMap = () => {
             new ImageLayer({
                 title: 'Kenya Boundary',
                 source: new ImageWMS({
-                    crossOrigin: 'anonymous',
+                    // crossOrigin: 'anonymous',
                     url: 'http://102.37.157.16:8080/geoserver/wms',
                     params: {
-                        LAYERS: "WASREB:country"
+                        LAYERS: "PUBLIC_PORTAL:country"
                     },
                     ratio: 1,
                     serverType: "geoserver",
@@ -107,10 +107,10 @@ const AdminMap = () => {
             new ImageLayer({
                 title: 'Counties',
                 source: new ImageWMS({
-                    crossOrigin: 'anonymous',
+                    // crossOrigin: 'anonymous',
                     url: 'http://102.37.157.16:8080/geoserver/wms',
                     params: {
-                        LAYERS: "WASREB:county"
+                        LAYERS: "PUBLIC_PORTAL:county"
                     },
                     ratio: 1,
                     serverType: "geoserver",
@@ -186,7 +186,9 @@ const AdminMap = () => {
         let layersList = []
         let url = "http://102.37.157.16:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities&namespace=WASREB&authkey=bad69a50-fb45-4a47-9079-ac540c58893c"
         fetch(url)
-            .then((response) => response.text())
+            .then((response) => {
+                return response.text()
+            })
             .then((data) => {
                 const json = xml2json(data);
                 const obj = JSON.parse(json)
@@ -236,7 +238,7 @@ const AdminMap = () => {
             url: function (extent) {
                 return (
                     `http://102.37.157.16:8080/geoserver/ows?service=WFS&` +
-                    `version=1.0.0&request=GetFeature&typeName=WASREB%3Alow_income_area_edit&` +
+                    `version=1.0.0&request=GetFeature&typeName=PUBLIC_PORTAL%3Aactual_served_area_14122022&` +
                     `outputFormat=application%2Fjson&srsname=EPSG:3857&` + 
                     `bbox=` +
                     extent.join(',') +
@@ -255,6 +257,15 @@ const AdminMap = () => {
             },
         });
 
+        // zoom to extent
+        let padding = [10, 10, 10, 10]
+        wfsLayer.getSource().once('change', function () {
+            map.getView().fit(wfsLayer.getSource().getExtent(), {
+            size: map.getSize(),
+            padding: padding,
+            });
+        });
+        
         mapRef.current.addLayer(wfsLayer)
     }
 
