@@ -1,4 +1,4 @@
-import logo from '../assets/img/combined-logo.png'
+import logo from '../assets/img/logo-login.png'
 
 const Login = () => (
   <section className="w-9/10 md:w-6/10 mx-auto flex justify-between border border-wsblue-200 rounded-md shadow-lg">
