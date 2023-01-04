@@ -1,4 +1,4 @@
-import logo from '../assets/img/majidata-logo-white.png'
+import logo from '../assets/img/combined-logo.png'
 // import userIcon from '../assets/icons/user.svg'
 import { Navbar, Dropdown, Avatar } from 'flowbite-react'
 import { startTransition } from 'react'
@@ -49,7 +49,7 @@ const Header = () => (
     style={{ backgroundColor: 'rgb(30, 51, 114)' }}
   >
     <Navbar.Brand href="https://admin.majidata.go.ke/">
-      <img src={logo} className="sm:h-6" alt="Majidata" />
+      <img src={logo} className="sm:h-10" alt="Majidata" />
     </Navbar.Brand>
     <div className="flex md:order-2">
       <Dropdown

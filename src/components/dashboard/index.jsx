@@ -165,7 +165,7 @@ const Dashboard = () => (
           />
         </div>
 
-        <p className="mx-auto flex flex-col justify-center font-bold text-white text-2xl text-wsblue-400 font-light text-center mt-12 w-12 h-12 rounded-full bg-slate-600 border-2 border-slate-400">
+        <p className="mx-auto flex flex-col justify-center font-bold text-white text-2xl text-wsblue-200 font-light text-center mt-12 w-12 h-12 rounded-full bg-wsblue-600 border-2 border-wsblue-400">
           <span>23</span>
         </p>
         <p className="text-sm uppercase text-center font-bold mt-4">
@@ -297,7 +297,7 @@ const Dashboard = () => (
           />
         </div>
 
-        <p className="mx-auto flex flex-col justify-center font-bold text-white text-2xl text-wsblue-400 font-light text-center mt-12 w-12 h-12 rounded-full bg-slate-600 border-2 border-slate-400">
+        <p className="mx-auto flex flex-col justify-center font-bold text-white text-2xl text-wsblue-400 font-light text-center mt-12 w-12 h-12 rounded-full bg-wsblue-600 border-2 border-wsblue-400">
           <span>87</span>
         </p>
         <p className="text-sm uppercase text-center font-bold mt-4">

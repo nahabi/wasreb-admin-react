@@ -8,7 +8,7 @@ import Approvals from './components/approvals/index.jsx'
 const App = () => (
   <>
     <Header />
-    <Map />
+    <Login />
     <Foot />
   </>
 )

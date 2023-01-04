@@ -1,12 +1,9 @@
-import logo from '../assets/img/majidata-logo-white.png'
+import logo from '../assets/img/combined-logo.png'
 
 const Login = () => (
   <section className="w-9/10 md:w-6/10 mx-auto flex justify-between border border-wsblue-200 rounded-md shadow-lg">
-    <div className="basis-1/2 bg-wsblue-800/95 p-12 rounded-l-md flex flex-col justify-center text-center">
+    <div className="basis-1/2 bg-wsblue-600 p-12 rounded-l-md flex flex-col justify-center text-center">
       <img src={logo} alt="Majidata" />
-      <p className="text-wsblue-100 border-t border-wsblue-100 mt-2">
-        The database for the Kenyan Water Sector
-      </p>
     </div>
     <div className="basis-1/2 bg-wsblue-50/60 p-12 flex flex-col justify-center">
       <form>

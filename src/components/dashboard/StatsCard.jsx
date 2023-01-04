@@ -14,7 +14,7 @@ const StatsCard = ({ label, stat, trendStat, trend, icon }) => {
       <div className="flex justify-between p-6">
         <div>
           <p className="text-sm font-bold uppercase mb-1">{label}</p>
-          <p className="text-4xl text-slate-400 font-light">{stat}</p>
+          <p className="text-4xl text-wsblue-400 font-light">{stat}</p>
         </div>
         <div className="h-12 w-12 rounded-full bg-wsblue-200 flex flex-col justify-center items-center">
           <img src={icon} alt="WSPs" className="h-6 w-6" />
