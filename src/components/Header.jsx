@@ -46,7 +46,7 @@ const Header = () => (
   <Navbar
     rounded={false}
     className="bg-wsblue-800 text-wsblue-100"
-    style={{ backgroundColor: 'rgb(30, 41, 59)' }}
+    style={{ backgroundColor: 'rgb(30, 51, 114)' }}
   >
     <Navbar.Brand href="https://admin.majidata.go.ke/">
       <img src={logo} className="sm:h-6" alt="Majidata" />
