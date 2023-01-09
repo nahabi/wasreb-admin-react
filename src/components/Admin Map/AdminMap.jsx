@@ -21,6 +21,9 @@ import VectorSource from 'ol/source/Vector';
 import GeoJSON from 'ol/format/GeoJSON.js';
 import {Vector as VectorLayer} from 'ol/layer.js';
 import {bbox as bboxStrategy} from 'ol/loadingstrategy.js';
+import Select from 'ol/interaction/Select.js';
+import {Fill, Stroke, Style} from 'ol/style.js';
+import { click } from 'ol/events/condition.js';
 
 
 import { Button, Space, Tooltip } from 'antd';
@@ -124,6 +127,30 @@ const AdminMap = () => {
         layers: []
     })
 
+    const selected = new Style({
+        fill: new Fill({
+            color: '#eeeeee',
+        }),
+        stroke: new Stroke({
+            color: 'rgba(0, 38, 255, 0.7)',
+            width: 2,
+        }),
+    });
+
+    function selectStyle(feature) {
+        const color = feature.get('COLOR') || '#eeeeee';
+        selected.getFill().setColor(color);
+        return selected;
+    }
+
+    // select interaction working on "click"
+    const selectClick = new Select({
+        condition: click,
+        style: selectStyle,
+    });
+
+    let select = selectClick
+
     // initialize map
     useEffect(() => {
         const initialMap = new Map({
@@ -173,9 +200,19 @@ const AdminMap = () => {
 
         initialMap.addControl(layerSwitcher)
 
+        // Add Select to map
+        initialMap.addInteraction(select);
+        select.on('select', function(e) {
+            var extent = e.target.getFeatures().getArray()[0]?.getGeometry().getExtent();
+            if (extent) {
+                initialMap.getView().fit(extent);
+            }
+        });
+
         // cleanup
         return () => {
             initialMap.removeControl(layerSwitcher)
+            initialMap.removeInteraction(select)
             initialMap.setTarget(null)
         }
 
@@ -282,11 +319,6 @@ const AdminMap = () => {
             fetchAttributes()
         }
     }, [editingLayer])
-
-    useEffect(() => {
-        console.log(editingLayerProperties)
-    })
-
 
     return (
         <div ref={mapElement} className="map-container">
