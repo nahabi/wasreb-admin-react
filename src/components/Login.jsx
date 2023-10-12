@@ -1,8 +1,8 @@
 import logo from '../assets/img/majidata-logo.svg'
 
 const Login = () => (
-  <section className="w-9/10 md:w-6/10 mx-auto flex justify-between border border-slate-200 rounded-md shadow-lg">
-    <div className="basis-1/2 bg-slate-800/95 p-12 rounded-l-md flex flex-col justify-center text-center">
+  <section className="w-9/10 md:w-6/10 mx-auto md:flex justify-between border border-slate-200 rounded-md shadow-lg">
+    <div className="basis-1/2 bg-slate-800/95 p-12 rounded-l-none md:rounded-l-md flex flex-col justify-center text-center">
       <img src={logo} alt="Majidata" />
       <p className="text-slate-100 border-t border-slate-100 mt-2">
         The database for the Kenyan Water Sector
